@@ -13,8 +13,8 @@ if (empty($_SESSION['user_id'])) {
 
 // セッションmeからデータ取り出し
 $user_id = $_SESSION['user_id'];
-$user_name = $SESSION['user_name'];
-$user_point = $SESSION['point'];
+$user_name = $_SESSION['user_name'];
+$point = $_SESSION['point'];
 ?>
 
 <html>
@@ -34,14 +34,14 @@ google.load("jqueryui", "1.8");
 <nav>
 <ul>
 <li>TOP</li>
-<li>プロフィール画面</li>
+<li><a href="#">プロフィール画面</a></li>
 <li>カード一覧画面</li>
-<li>ガチャ画面</li>
+<li><a href="./gashapon.php">ガチャ画面</a></li>
 </ul>
 </nav>
 <section>
-<h1>ようこそ <?php echo h($user_name);?>さん</h1>
-<img src="" alt="アバター">
+<h1>ようこそ <?php echo h($user_id);?>さん</h1>
+<img src=/Image/<?php echo h($user_id);?>.png alt="アバター">
 <p>所持ポイント：<?php echo h($point);?></p>
 </section>
 
